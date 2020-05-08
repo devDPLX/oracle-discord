@@ -1,29 +1,49 @@
-const Discord = require('discord.js');
+const { CommandoClient } = require('discord.js-commando');
 
-const client = new Discord.Client();
+const path = require('path');
 
- 
 
-client.on('ready', () => {
 
-    console.log('I am ready!');
+const client = new CommandoClient({
 
-});
+	commandPrefix: '?',
 
- 
-
-client.on('message', message => {
-
-    if (message.content === 'ping') {
-
-       message.reply('pong');
-
-       }
+	owner: '153277301793095682'
 
 });
 
- 
 
-// THIS  MUST  BE  THIS  WAY
 
-client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
+client.registry
+
+	.registerDefaultTypes()
+
+	.registerGroups([
+
+		['first', 'Your First Command Group'],
+
+	])
+
+	.registerDefaultGroups()
+
+	.registerDefaultCommands()
+
+	.registerCommandsIn(path.join(__dirname, 'commands'));
+
+
+
+client.once('ready', () => {
+
+	console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
+
+	client.user.setActivity('with Commando');
+
+});
+
+
+
+client.on('error', console.error);
+
+
+
+client.login(process.env.BOT_TOKEN);
