@@ -1,25 +1,97 @@
 {
 
-  "name": "Example",
+	"name": "discord.js-commando",
 
-  "description": "Example",
+	"version": "0.11.0-dev",
 
-  "version": "0.0.0",
+	"description": "The official command framework for Discord.js",
 
-  "main": "bot.js",
+	"license": "Apache-2.0",
 
-  "scripts": {
+	"author": "Schuyler Cebulskie <Gawdl3y@gawdl3y.com> (https://gawdl3y.com/)",
 
+	"repository": {
+
+		"type": "git",
+
+		"url": "https://github.com/discordjs/Commando.git"
+
+	},
+
+	"bugs": {
+
+		"url": "https://github.com/discordjs/Commando/issues"
+
+	},
+
+	"keywords": [
+
+		"discord",
+
+		"bot",
+
+		"commands"
+
+	],
+
+	"scripts": {
+
+		"test": "yarn run lint && yarn run docs:test",
+
+		"lint": "eslint src",
+
+		"lint:fix": "eslint --fix src",
+
+		"docs": "docgen --source src --custom docs/index.yml --output docs/docs.json",
+
+		"docs:test": "docgen --source src --custom docs/index.yml",
+    
     "start": "node bot.js"
 
-  },
+	},
 
-  "dependencies": {
+	"main": "src/bot.js",
 
-    "discord.js-commando": "0.10.0",
+	"types": "./typings/index.d.ts",
 
+	"dependencies": {
+
+		"common-tags": "^1.8.0",
+
+		"require-all": "^3.0.0",
+    
     "request": "2.81.0"
 
-  }
+	},
+
+	"devDependencies": {
+
+		"@types/node": "^12.7.3",
+
+		"discord.js-docgen": "discordjs/docgen",
+
+		"eslint": "^6.3.0",
+
+		"typescript": "^3.6.2"
+
+	},
+
+	"peerDependencies": {
+
+		"@types/better-sqlite3": "^5.0.0",
+
+		"better-sqlite3": "^5.0.0",
+
+		"discord.js": "^12.0.0",
+
+		"sqlite": "^3.0.0"
+
+	},
+
+	"engines": {
+
+		"node": ">=8.6.0"
+
+	}
 
 }
