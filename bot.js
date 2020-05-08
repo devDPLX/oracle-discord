@@ -1,4 +1,3 @@
-/*
 console.log('0');
 const { Commando } = require('discord.js-commando');
 const Path = require('path');
@@ -30,5 +29,3 @@ Oracle.on('error', console.error);
 //
 Oracle.login(process.env.BOT_TOKEN);
 console.log('5');
-*/
-console.log("running");
