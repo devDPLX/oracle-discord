@@ -1,4 +1,5 @@
 //
+console.log('0');
 const { Commando } = require('discord.js-commando');
 const Path = require('path');
 console.log('1');
